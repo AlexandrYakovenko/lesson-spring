@@ -24,4 +24,12 @@ public class Greeting {
     public void setContent(String content) {
         this.content = content;
     }
+
+    @Override
+    public String toString() {
+        return "Greeting{" +
+                "id=" + id +
+                ", content='" + content + '\'' +
+                '}';
+    }
 }
