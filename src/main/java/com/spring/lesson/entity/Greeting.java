@@ -1,11 +1,29 @@
 package com.spring.lesson.entity;
 
-public class Greeting {
-    public Long id;
-    public String content;
+import org.springframework.context.annotation.Scope;
 
-    public Greeting(Long id, String content) {
-        this.id = id;
+import javax.persistence.*;
+
+@Scope("prototype")
+@Entity
+@Table(name = "greeting")
+@SequenceGenerator(name="seq", initialValue = 1, allocationSize = 100)
+public class Greeting {
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    private Long id;
+
+    @Column(name = "content")
+    private String content;
+
+    @Version
+    @Column(name="version")
+    public long version;
+
+    public Greeting() {
+    }
+
+    public Greeting(String content) {
         this.content = content;
     }
 
