@@ -1,4 +1,4 @@
-package com.spring.lesson.events;
+package com.spring.lesson.github;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -7,10 +7,9 @@ import javax.persistence.*;
 @Scope("prototype")
 @Entity
 @Table(name = "greeting")
-@SequenceGenerator(name="seq", initialValue = 1, allocationSize = 100)
 public class Greeting {
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @GeneratedValue()
     private Long id;
 
     @Column(name = "content")

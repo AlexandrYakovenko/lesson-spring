@@ -1,0 +1,22 @@
+<html xmlns:th="https://www.thymeleaf.org">
+<body>
+
+<div th:if="${message}">
+    <h2 th:text="${message}"/>
+</div>
+
+<div>
+    <h2 class="title">ADMIN - PAGE</h2>
+</div>
+
+<div>
+    <ul>
+        <th:block th:each="project : ${projects}">
+            <li th:utext = "${project}"></li>
+        </th:block>
+    </ul>
+
+</div>
+
+</body>
+</html>
