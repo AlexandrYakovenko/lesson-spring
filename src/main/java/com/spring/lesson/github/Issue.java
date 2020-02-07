@@ -2,6 +2,7 @@ package com.spring.lesson.github;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.google.common.base.Objects;
 
 public class Issue {
 
@@ -31,4 +32,5 @@ public class Issue {
     public String getTitle() {
         return title;
     }
+
 }

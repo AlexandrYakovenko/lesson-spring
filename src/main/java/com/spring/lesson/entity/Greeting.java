@@ -3,13 +3,16 @@ package com.spring.lesson.entity;
 import org.springframework.context.annotation.Scope;
 
 import javax.persistence.*;
+import java.io.InputStream;
+import java.util.ArrayList;
+import java.util.List;
 
 @Scope("prototype")
 @Entity
 @Table(name = "greeting")
 public class Greeting {
     @Id
-    @GeneratedValue()
+    @GeneratedValue
     private Long id;
 
     @Column(name = "content")
@@ -49,4 +52,6 @@ public class Greeting {
                 ", content='" + content + '\'' +
                 '}';
     }
+
+
 }

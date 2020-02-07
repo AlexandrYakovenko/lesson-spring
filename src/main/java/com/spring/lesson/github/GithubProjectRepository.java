@@ -1,9 +1,9 @@
 package com.spring.lesson.github;
 
-import com.spring.lesson.github.GithubProject;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-public interface GithubProjectRepository extends PagingAndSortingRepository<GithubProject, Long> {
+public interface GithubProjectRepository extends JpaRepository<GithubProject, Long> {
 
     GithubProject findByRepoName(String repoName);
 }

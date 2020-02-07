@@ -3,6 +3,8 @@ package com.spring.lesson.github;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+import java.util.Objects;
+
 public class Actor {
 
     private final String login;
@@ -30,5 +32,20 @@ public class Actor {
 
     public String getHtmlUrl() {
         return htmlUrl;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Actor actor = (Actor) o;
+        return Objects.equals(login, actor.login) &&
+                Objects.equals(avatarUrl, actor.avatarUrl) &&
+                Objects.equals(htmlUrl, actor.htmlUrl);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(login, avatarUrl, htmlUrl);
     }
 }
